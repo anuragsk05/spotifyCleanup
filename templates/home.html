@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Cleanup</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #121212;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            padding: 20px;
+            flex-direction: column;
+        }
+
+        .top-bar {
+            background-color: #1DB954;
+            width: 100%;
+            padding: 15px 0;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            position: absolute;
+            top: 0;
+        }
+
+        .main-buttons {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 50px;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            background-color: #1DB954;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+            width: 100%;
+            max-width: 200px;
+        }
+
+        .btn:hover {
+            background-color: #17a34a;
+        }
+
+        .btn img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .playlist-container {
+            margin-top: 50px;
+            display: none; /* Hidden by default */
+        }
+
+        .playlist-image {
+            width: 250px;
+            height: 250px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .action-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .keep-btn {
+            background-color: #1DB954;
+        }
+
+        .remove-btn {
+            background-color: #e60000;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            font-size: 0.9rem;
+            color: #bbb;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">Spotify Cleanup</div>
+
+    <!-- Main buttons -->
+    <div class="main-buttons">
+        <!-- Playlist Button -->
+        <div class="btn-container">
+            <img src="https://via.placeholder.com/50x50?text=🎶" alt="Playlist Icon">
+            <button class="btn" onclick="showPlaylists()">Clean Playlists</button>
+        </div>
+
+        <!-- Song Button -->
+        <div class="btn-container">
+            <img src="https://via.placeholder.com/50x50?text=📂" alt="Song Icon">
+            <button class="btn" onclick="selectPlaylist()">Select a Playlist to Clean</button>
+        </div>
+    </div>
+
+    <!-- Playlist container (initially hidden) -->
+    <div class="playlist-container" id="playlist-container">
+        <img src="https://via.placeholder.com/250" alt="Playlist Image" class="playlist-image" id="playlist-image">
+        <div class="action-buttons">
+            <button class="action-btn keep-btn" id="keep-btn">Keep</button>
+            <button class="action-btn remove-btn" id="remove-btn">Remove</button>
+        </div>
+    </div>
+
+    <div class="footer">A personal project by Anurag Komaragiri</div>
+
+    <script>
+        function showPlaylists() {
+            document.getElementById('playlist-container').style.display = 'block';
+            // Simulate loading playlist image
+            document.getElementById('playlist-image').src = 'https://via.placeholder.com/250'; // Replace with dynamic image URL
+        }
+
+        function selectPlaylist() {
+            alert("Select a playlist to clean");  // Placeholder action for selecting a playlist
+        }
+    </script>
+</body>
+</html>
